@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		4ADA90B327554E550069885A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90B227554E550069885A /* AppDelegate.swift */; };
 		4ADA90B527554E550069885A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90B427554E550069885A /* SceneDelegate.swift */; };
-		4ADA90B727554E550069885A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90B627554E550069885A /* ViewController.swift */; };
+		4ADA90B727554E550069885A /* SearchRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90B627554E550069885A /* SearchRepositories.swift */; };
 		4ADA90BA27554E550069885A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90B827554E550069885A /* Main.storyboard */; };
 		4ADA90BC27554E560069885A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90BB27554E560069885A /* Assets.xcassets */; };
 		4ADA90BF27554E560069885A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90BD27554E560069885A /* LaunchScreen.storyboard */; };
+		4ADA90CE275552B20069885A /* RepositoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90CD275552B20069885A /* RepositoryDetail.swift */; };
+		4ADA90D0275552C10069885A /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90CF275552C10069885A /* UserDetail.swift */; };
+		4ADA90D727555E2E0069885A /* FoundRepositoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90D527555E2E0069885A /* FoundRepositoriesCell.swift */; };
+		4ADA90D827555E2E0069885A /* FoundRepositoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90D627555E2E0069885A /* FoundRepositoriesCell.xib */; };
+		4ADA90DD27555E670069885A /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90DB27555E670069885A /* UserInfoCell.swift */; };
+		4ADA90DE27555E670069885A /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90DC27555E670069885A /* UserInfoCell.xib */; };
+		4ADA90E327555EBF0069885A /* RepositoriesOfUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90E127555EBF0069885A /* RepositoriesOfUserCell.swift */; };
+		4ADA90E427555EBF0069885A /* RepositoriesOfUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90E227555EBF0069885A /* RepositoriesOfUserCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4ADA90AF27554E550069885A /* GithubSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADA90B227554E550069885A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ADA90B427554E550069885A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4ADA90B627554E550069885A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4ADA90B627554E550069885A /* SearchRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositories.swift; sourceTree = "<group>"; };
 		4ADA90B927554E550069885A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4ADA90BB27554E560069885A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ADA90BE27554E560069885A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ADA90C027554E560069885A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ADA90CD275552B20069885A /* RepositoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetail.swift; sourceTree = "<group>"; };
+		4ADA90CF275552C10069885A /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		4ADA90D527555E2E0069885A /* FoundRepositoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundRepositoriesCell.swift; sourceTree = "<group>"; };
+		4ADA90D627555E2E0069885A /* FoundRepositoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoundRepositoriesCell.xib; sourceTree = "<group>"; };
+		4ADA90DB27555E670069885A /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		4ADA90DC27555E670069885A /* UserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		4ADA90E127555EBF0069885A /* RepositoriesOfUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesOfUserCell.swift; sourceTree = "<group>"; };
+		4ADA90E227555EBF0069885A /* RepositoriesOfUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesOfUserCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,111 @@
 		4ADA90B127554E550069885A /* GithubSearchApp */ = {
 			isa = PBXGroup;
 			children = (
-				4ADA90B227554E550069885A /* AppDelegate.swift */,
-				4ADA90B427554E550069885A /* SceneDelegate.swift */,
-				4ADA90B627554E550069885A /* ViewController.swift */,
+				4ADA90C727554E720069885A /* Model */,
+				4ADA90C627554E650069885A /* Delegates */,
+				4ADA90C827554EAD0069885A /* View */,
+				4ADA90C927554EBF0069885A /* Controller */,
 				4ADA90B827554E550069885A /* Main.storyboard */,
 				4ADA90BB27554E560069885A /* Assets.xcassets */,
 				4ADA90BD27554E560069885A /* LaunchScreen.storyboard */,
 				4ADA90C027554E560069885A /* Info.plist */,
 			);
 			path = GithubSearchApp;
+			sourceTree = "<group>";
+		};
+		4ADA90C627554E650069885A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90B227554E550069885A /* AppDelegate.swift */,
+				4ADA90B427554E550069885A /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		4ADA90C727554E720069885A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90CC27554F460069885A /* DataClass */,
+				4ADA90CB27554F110069885A /* FetchingDatas */,
+				4ADA90CA27554F080069885A /* UrlClass */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4ADA90C827554EAD0069885A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90D227555D970069885A /* UserDetailsCells */,
+				4ADA90D127555D660069885A /* SearchRepositoriesCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4ADA90C927554EBF0069885A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90B627554E550069885A /* SearchRepositories.swift */,
+				4ADA90CD275552B20069885A /* RepositoryDetail.swift */,
+				4ADA90CF275552C10069885A /* UserDetail.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4ADA90CA27554F080069885A /* UrlClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UrlClass;
+			sourceTree = "<group>";
+		};
+		4ADA90CB27554F110069885A /* FetchingDatas */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FetchingDatas;
+			sourceTree = "<group>";
+		};
+		4ADA90CC27554F460069885A /* DataClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataClass;
+			sourceTree = "<group>";
+		};
+		4ADA90D127555D660069885A /* SearchRepositoriesCell */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90D527555E2E0069885A /* FoundRepositoriesCell.swift */,
+				4ADA90D627555E2E0069885A /* FoundRepositoriesCell.xib */,
+			);
+			path = SearchRepositoriesCell;
+			sourceTree = "<group>";
+		};
+		4ADA90D227555D970069885A /* UserDetailsCells */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90D427555DCA0069885A /* Repositories */,
+				4ADA90D327555DBE0069885A /* UserData */,
+			);
+			path = UserDetailsCells;
+			sourceTree = "<group>";
+		};
+		4ADA90D327555DBE0069885A /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90DB27555E670069885A /* UserInfoCell.swift */,
+				4ADA90DC27555E670069885A /* UserInfoCell.xib */,
+			);
+			path = UserData;
+			sourceTree = "<group>";
+		};
+		4ADA90D427555DCA0069885A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA90E127555EBF0069885A /* RepositoriesOfUserCell.swift */,
+				4ADA90E227555EBF0069885A /* RepositoriesOfUserCell.xib */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +239,9 @@
 			files = (
 				4ADA90BF27554E560069885A /* LaunchScreen.storyboard in Resources */,
 				4ADA90BC27554E560069885A /* Assets.xcassets in Resources */,
+				4ADA90D827555E2E0069885A /* FoundRepositoriesCell.xib in Resources */,
+				4ADA90E427555EBF0069885A /* RepositoriesOfUserCell.xib in Resources */,
+				4ADA90DE27555E670069885A /* UserInfoCell.xib in Resources */,
 				4ADA90BA27554E550069885A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADA90B727554E550069885A /* ViewController.swift in Sources */,
+				4ADA90CE275552B20069885A /* RepositoryDetail.swift in Sources */,
+				4ADA90DD27555E670069885A /* UserInfoCell.swift in Sources */,
+				4ADA90B727554E550069885A /* SearchRepositories.swift in Sources */,
+				4ADA90E327555EBF0069885A /* RepositoriesOfUserCell.swift in Sources */,
+				4ADA90D727555E2E0069885A /* FoundRepositoriesCell.swift in Sources */,
 				4ADA90B327554E550069885A /* AppDelegate.swift in Sources */,
+				4ADA90D0275552C10069885A /* UserDetail.swift in Sources */,
 				4ADA90B527554E550069885A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
