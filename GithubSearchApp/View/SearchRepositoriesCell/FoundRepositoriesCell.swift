@@ -7,11 +7,15 @@
 
 import UIKit
 
+protocol FoundRepositoriesCellDelegate : AnyObject{
+    func didTapButton()
+}
 class FoundRepositoriesCell: UITableViewCell {
     @IBOutlet weak var ownerImageView: UIImageView!
     @IBOutlet weak var ownerUsernameLabelField: UILabel!
     @IBOutlet weak var repositoryNameLabelField: UILabel!
     @IBOutlet weak var peginateLabelField: UILabel!
+    weak var delegate : FoundRepositoriesCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +25,9 @@ class FoundRepositoriesCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    @IBAction func buttonClicked(_ sender: Any) {
+        delegate?.didTapButton()
     }
     
 }

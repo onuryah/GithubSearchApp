@@ -50,7 +50,7 @@
                         <outlet property="searchButton" destination="d59-Xg-8AO" id="EL7-VC-Jmp"/>
                         <outlet property="searchTextField" destination="Fax-Pd-Fom" id="v9c-sc-nfP"/>
                         <segue destination="7UB-3n-Atm" kind="presentation" identifier="toUserDetailVC" modalPresentationStyle="fullScreen" id="abm-Ks-y6r"/>
-                        <segue destination="X3T-EC-R3j" kind="presentation" identifier="toRepositoryDetailVC" modalPresentationStyle="fullScreen" id="AMw-uw-SRm"/>
+                        <segue destination="Vkg-Mz-H97" kind="presentation" identifier="toRepositoryDetailVC" modalPresentationStyle="fullScreen" id="AMw-uw-SRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,22 +100,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0c-fR-jB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="-210"/>
+            <point key="canvasLocation" x="2360.8695652173915" y="-210.26785714285714"/>
         </scene>
-        <!--Repository Detail-->
+        <!--Details-->
         <scene sceneID="iZm-A7-Bwc">
             <objects>
                 <viewController id="X3T-EC-R3j" customClass="RepositoryDetail" customModule="GithubSearchApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVy-n9-1bs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxg-ZE-0IQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qcF-t9-dax"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jxg-ZE-0IQ" firstAttribute="leading" secondItem="qcF-t9-dax" secondAttribute="leading" id="htB-2i-zQb"/>
+                            <constraint firstItem="jxg-ZE-0IQ" firstAttribute="top" secondItem="qcF-t9-dax" secondAttribute="top" id="ipC-PH-8qy"/>
+                            <constraint firstItem="jxg-ZE-0IQ" firstAttribute="bottom" secondItem="qcF-t9-dax" secondAttribute="bottom" id="qBt-kG-ES3"/>
+                            <constraint firstItem="jxg-ZE-0IQ" firstAttribute="trailing" secondItem="qcF-t9-dax" secondAttribute="trailing" id="w89-eR-G7K"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Details" id="dYE-4r-3ab"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSH-KQ-bhs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="423"/>
+            <point key="canvasLocation" x="2360.8695652173915" y="422.54464285714283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WOW-Bn-1WW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vkg-Mz-H97" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sgp-we-9r9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X3T-EC-R3j" kind="relationship" relationship="rootViewController" id="yjq-WE-zAx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ybb-vv-Tmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450.7246376811595" y="422.54464285714283"/>
         </scene>
     </scenes>
     <resources>

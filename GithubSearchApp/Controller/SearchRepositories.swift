@@ -45,6 +45,7 @@ class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewData
             }
         }.resume()
     }
+
     
     @IBAction func searchButtonClicked(_ sender: Any) {
         repositoriesTableView.isHidden = false
@@ -59,13 +60,17 @@ class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewData
         cell.ownerUsernameLabelField.text = array[indexPath.row].owner.login
         cell.peginateLabelField.text = String(indexPath.row + 1)
         cell.repositoryNameLabelField.text = array[indexPath.row].name
+        cell.delegate = self
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
     }
     
 
 }
 
-extension SearchRepositories{
+extension SearchRepositories : FoundRepositoriesCellDelegate{
     fileprivate func registerCellToTableView(){
         let cellNib = UINib(nibName: "FoundRepositoriesCell", bundle: nil)
         repositoriesTableView.register(cellNib, forCellReuseIdentifier: "foundRepositoriesCell")
@@ -73,6 +78,9 @@ extension SearchRepositories{
     fileprivate func setDelegates(){
         repositoriesTableView.delegate = self
         repositoriesTableView.dataSource = self
+    }
+    func didTapButton() {
+        performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
     }
 }
 
