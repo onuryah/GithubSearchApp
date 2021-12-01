@@ -32,7 +32,8 @@ class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewData
                 do{
                     
                     let jsonData = try JSONDecoder().decode(Welcome.self, from: data)
-                    self.array = jsonData
+                    self.array = jsonData.items
+                    print(self.array)
                     
 
                         DispatchQueue.main.async {
@@ -55,6 +56,9 @@ class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = repositoriesTableView.dequeueReusableCell(withIdentifier: "foundRepositoriesCell", for: indexPath) as! FoundRepositoriesCell
+        cell.ownerUsernameLabelField.text = array[indexPath.row].owner.login
+        cell.peginateLabelField.text = String(indexPath.row + 1)
+        cell.repositoryNameLabelField.text = array[indexPath.row].name
         return cell
     }
     

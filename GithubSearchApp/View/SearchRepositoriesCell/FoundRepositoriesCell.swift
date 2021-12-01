@@ -15,10 +15,26 @@ class FoundRepositoriesCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        fixLabelFields()
+        moveSegue()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+}
+extension FoundRepositoriesCell{
+    private func fixLabelFields(){
+        ownerUsernameLabelField.lineBreakMode = .byWordWrapping
+        ownerUsernameLabelField.numberOfLines = 0
+        repositoryNameLabelField.lineBreakMode = .byWordWrapping
+        repositoryNameLabelField.numberOfLines = 0
+    }
+    private func moveSegue(){
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToImage))
+    }
+    @objc func tapToImage(){
+        print("kontrol")
+    }
 }
