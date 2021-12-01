@@ -8,16 +8,17 @@
 import UIKit
 
 class FoundRepositoriesCell: UITableViewCell {
-
+    @IBOutlet weak var ownerImageView: UIImageView!
+    @IBOutlet weak var ownerUsernameLabelField: UILabel!
+    @IBOutlet weak var repositoryNameLabelField: UILabel!
+    @IBOutlet weak var peginateLabelField: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
