@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xNz-I2-lzX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -16,23 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d59-Xg-8AO">
-                                <rect key="frame" x="311" y="308" width="83" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Search"/>
-                                <connections>
-                                    <action selector="searchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8pV-tR-mvo"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fax-Pd-Fom">
-                                <rect key="frame" x="36" y="305" width="241" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lKA-Ov-CvZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lKA-Ov-CvZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -45,17 +30,16 @@
                             <constraint firstItem="lKA-Ov-CvZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rwX-yo-nIv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CyF-n2-bbK"/>
                     <connections>
                         <outlet property="repositoriesTableView" destination="lKA-Ov-CvZ" id="fff-2t-IeY"/>
-                        <outlet property="searchButton" destination="d59-Xg-8AO" id="EL7-VC-Jmp"/>
-                        <outlet property="searchTextField" destination="Fax-Pd-Fom" id="v9c-sc-nfP"/>
                         <segue destination="7UB-3n-Atm" kind="presentation" identifier="toUserDetailVC" modalPresentationStyle="fullScreen" id="abm-Ks-y6r"/>
                         <segue destination="Vkg-Mz-H97" kind="presentation" identifier="toRepositoryDetailVC" modalPresentationStyle="fullScreen" id="AMw-uw-SRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="83.705357142857139"/>
         </scene>
         <!--User Detail-->
         <scene sceneID="uGo-Az-Igu">
@@ -100,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0c-fR-jB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.8695652173915" y="-210.26785714285714"/>
+            <point key="canvasLocation" x="3271.0144927536235" y="-210.26785714285714"/>
         </scene>
         <!--Details-->
         <scene sceneID="iZm-A7-Bwc">
@@ -130,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSH-KQ-bhs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.8695652173915" y="422.54464285714283"/>
+            <point key="canvasLocation" x="3271.0144927536235" y="422.54464285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WOW-Bn-1WW">
@@ -148,7 +132,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ybb-vv-Tmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1450.7246376811595" y="422.54464285714283"/>
+            <point key="canvasLocation" x="2360.8695652173915" y="422.54464285714283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u7G-QY-q32">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xNz-I2-lzX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="80C-7N-u3I">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xgF-jB-iyA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFW-Nm-erv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>

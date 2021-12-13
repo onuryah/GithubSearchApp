@@ -9,17 +9,21 @@ import UIKit
 
 class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     @IBOutlet weak var repositoriesTableView: UITableView!
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
+
     var array = [Item]()
+    var shownArray = [Item]()
+    let searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarAdded()
         setDelegates()
         registerCellToTableView()
         getData()
     }
+
     func getData() {
         URLSession.shared.dataTask(with: SearchRepositoriesUrl().searchRepositoriesUrl!) { data, response, error in
             if error != nil {
@@ -47,9 +51,7 @@ class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     
-    @IBAction func searchButtonClicked(_ sender: Any) {
-        repositoriesTableView.isHidden = false
-    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -70,7 +72,7 @@ class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewData
 
 }
 
-extension SearchRepositories : FoundRepositoriesCellDelegate{
+extension SearchRepositories : FoundRepositoriesCellDelegate, UISearchResultsUpdating{
     fileprivate func registerCellToTableView(){
         let cellNib = UINib(nibName: "FoundRepositoriesCell", bundle: nil)
         repositoriesTableView.register(cellNib, forCellReuseIdentifier: "foundRepositoriesCell")
@@ -82,5 +84,17 @@ extension SearchRepositories : FoundRepositoriesCellDelegate{
     func didTapButton() {
         performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
     }
+    fileprivate func searchBarAdded(){
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {return}
+        for data in array{
+            if data.name.uppercased() == text.uppercased(){
+                self.shownArray.append(data)
+    }
+}
+}
 }
 
