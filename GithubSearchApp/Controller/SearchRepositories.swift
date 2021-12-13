@@ -24,7 +24,9 @@ class SearchRepositories: UIViewController {
     }
 
     func getData() {
-        URLSession.shared.dataTask(with: SearchRepositoriesUrl().searchRepositoriesUrl!) { data, response, error in
+        for pageNumber in SearchRepositoriesUrl.pageNumber{
+        guard let url = URL(string: SearchRepositoriesUrl.url+pageNumber)  else {return}
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 let alert = UIAlertController(title: "ERROR", message: "Error!", preferredStyle: UIAlertController.Style.alert)
                 let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
@@ -47,6 +49,7 @@ class SearchRepositories: UIViewController {
                 }
             }
         }.resume()
+        }
     }
 
     
