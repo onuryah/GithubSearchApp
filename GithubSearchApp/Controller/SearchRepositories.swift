@@ -7,13 +7,12 @@
 
 import UIKit
 
-class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchRepositories: UIViewController {
     
     
     @IBOutlet weak var repositoriesTableView: UITableView!
 
     var array = [Item]()
-    var shownArray = [Item]()
     let searchController = UISearchController()
     
     override func viewDidLoad() {
@@ -68,11 +67,9 @@ class SearchRepositories: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
     }
-    
-
 }
 
-extension SearchRepositories : FoundRepositoriesCellDelegate, UISearchResultsUpdating{
+extension SearchRepositories : FoundRepositoriesCellDelegate, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating{
     fileprivate func registerCellToTableView(){
         let cellNib = UINib(nibName: "FoundRepositoriesCell", bundle: nil)
         repositoriesTableView.register(cellNib, forCellReuseIdentifier: "foundRepositoriesCell")
@@ -90,11 +87,20 @@ extension SearchRepositories : FoundRepositoriesCellDelegate, UISearchResultsUpd
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return}
-        for data in array{
-            if data.name.uppercased() == text.uppercased(){
-                self.shownArray.append(data)
+        if text != "" {
+            for data in array{
+                if data.name.uppercased() == text.uppercased(){
+                    self.array.removeAll()
+                    self.array.append(data)
+                    print("kontrol: \(data)")
+                    repositoriesTableView.reloadData()
+                }
+
+            }
+        }else{
+            getData()
+            repositoriesTableView.reloadData()
+        }
     }
-}
-}
 }
 
