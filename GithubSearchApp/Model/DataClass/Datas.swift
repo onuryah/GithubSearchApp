@@ -28,6 +28,9 @@ struct Item: Codable {
     let id: Int
     let name: String
     let itemPrivate: Bool
+    let language: Language?
+    let forksCount: Int
+    let watchersCount: Int
     let owner: Owner
 
 
@@ -35,7 +38,20 @@ struct Item: Codable {
         case id
         case name
         case itemPrivate = "private"
+        case language = "language"
+        case forksCount = "forks_count"
+        case watchersCount = "watchers_count"
         case owner
+    }
+    
+    enum Language: String, Codable {
+        case dart = "Dart"
+        case html = "HTML"
+        case java = "Java"
+        case javaScript = "JavaScript"
+        case kotlin = "Kotlin"
+        case php = "PHP"
+        case python = "Python"
     }
 }
 // MARK: - Owner

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchRepositories: UIViewController {
     
@@ -14,6 +15,7 @@ class SearchRepositories: UIViewController {
 
     var array = [Item]()
     let searchController = UISearchController()
+    var chosen : Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +26,7 @@ class SearchRepositories: UIViewController {
     }
 
     func getData() {
-        for pageNumber in SearchRepositoriesUrl.pageNumber{
-        guard let url = URL(string: SearchRepositoriesUrl.url+pageNumber)  else {return}
+        guard let url = URL(string: SearchRepositoriesUrl.baseUrl+SearchRepositoriesUrl.repoName+SearchRepositoriesUrl.between+SearchRepositoriesUrl.pageNumber)  else {return}
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 let alert = UIAlertController(title: "ERROR", message: "Error!", preferredStyle: UIAlertController.Style.alert)
@@ -42,6 +43,7 @@ class SearchRepositories: UIViewController {
                     
 
                         DispatchQueue.main.async {
+                            
                             self.repositoriesTableView.reloadData()
                         }
                 }catch{
@@ -49,7 +51,7 @@ class SearchRepositories: UIViewController {
                 }
             }
         }.resume()
-        }
+        
     }
 
     
@@ -64,11 +66,19 @@ class SearchRepositories: UIViewController {
         cell.ownerUsernameLabelField.text = array[indexPath.row].owner.login
         cell.peginateLabelField.text = String(indexPath.row + 1)
         cell.repositoryNameLabelField.text = array[indexPath.row].name
+        cell.ownerImageView.sd_setImage(with: URL(string: array[indexPath.row].owner.avatarURL))
         cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosen = array[indexPath.row]
         performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRepositoryDetailVC"{
+            let destination = segue.destination as! RepositoryDetail
+            destination.seleceted = chosen
+        }
     }
 }
 
@@ -82,7 +92,7 @@ extension SearchRepositories : FoundRepositoriesCellDelegate, UITableViewDelegat
         repositoriesTableView.dataSource = self
     }
     func didTapButton() {
-        performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
+        performSegue(withIdentifier: "toUserDetailVC", sender: nil)
     }
     fileprivate func searchBarAdded(){
         searchController.searchResultsUpdater = self
@@ -90,20 +100,10 @@ extension SearchRepositories : FoundRepositoriesCellDelegate, UITableViewDelegat
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return}
-        if text != "" {
-            for data in array{
-                if data.name.uppercased() == text.uppercased(){
-                    self.array.removeAll()
-                    self.array.append(data)
-                    print("kontrol: \(data)")
-                    repositoriesTableView.reloadData()
-                }
-
-            }
-        }else{
-            getData()
-            repositoriesTableView.reloadData()
-        }
+        SearchRepositoriesUrl.repoName = text
+        getData()
     }
+
+    
 }
 
