@@ -8,9 +8,11 @@
 import UIKit
 
 class UserDetail: UIViewController {
+    var selected: Item?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selected)
         
     }
 

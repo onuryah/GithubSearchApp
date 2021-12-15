@@ -15,8 +15,6 @@ class RepositoryDetail: UIViewController {
     @IBOutlet weak var forksCount: UILabel!
     
     @IBOutlet weak var watchersCountLabel: UILabel!
-    
-    var seleceted : Item?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +28,18 @@ class RepositoryDetail: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     func putData(){
-        repoNameLabel.text = seleceted?.name
-        ownerNameLabel.text = seleceted?.owner.login
-//        ownerAvatar = seleceted?.owner.avatarURL
-        language.text = seleceted?.language as? String
-//        forksCount.text = seleceted?.forksCount
-//        watchersCount.text = seleceted?.watchersCount
+        let selectedData = Singleton.chosenItem
+        if let imageUrl = selectedData?.owner.avatarURL{
+            avatarImageView.sd_setImage(with: URL(string: imageUrl))
+        }
+//        language.text = seleceted?.language as? String
+        if let selectedData = selectedData {
+            repoNameLabel.text = "Repository Name: "+selectedData.name
+            ownerNameLabel.text = "Owner Name: "+selectedData.owner.login
+            forksCount.text = "Forks Count: "+String(selectedData.forksCount)
+            watchersCountLabel.text = "Watchers Count:"+String(selectedData.watchersCount)
+            language.text = selectedData.language?.rawValue
+        }
         
     }
 }

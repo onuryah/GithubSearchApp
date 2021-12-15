@@ -27,6 +27,7 @@ class SearchRepositories: UIViewController {
 
     func getData() {
         guard let url = URL(string: SearchRepositoriesUrl.baseUrl+SearchRepositoriesUrl.repoName+SearchRepositoriesUrl.between+SearchRepositoriesUrl.pageNumber)  else {return}
+        print(url)
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 let alert = UIAlertController(title: "ERROR", message: "Error!", preferredStyle: UIAlertController.Style.alert)
@@ -39,15 +40,13 @@ class SearchRepositories: UIViewController {
                     
                     let jsonData = try JSONDecoder().decode(Welcome.self, from: data)
                     self.array = jsonData.items
-                    print(self.array)
                     
 
                         DispatchQueue.main.async {
-                            
                             self.repositoriesTableView.reloadData()
                         }
                 }catch{
-                    
+                   print("error")
                 }
             }
         }.resume()
@@ -71,14 +70,8 @@ class SearchRepositories: UIViewController {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosen = array[indexPath.row]
+        Singleton.chosenItem = array[indexPath.row]
         performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toRepositoryDetailVC"{
-            let destination = segue.destination as! RepositoryDetail
-            destination.seleceted = chosen
-        }
     }
 }
 
