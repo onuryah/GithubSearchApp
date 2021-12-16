@@ -7,27 +7,22 @@
 
 import UIKit
 
-protocol FoundRepositoriesCellDelegate : AnyObject{
-    func didTapButton()
-}
+
 class FoundRepositoriesCell: UITableViewCell {
     @IBOutlet weak var ownerImageView: UIImageView!
     @IBOutlet weak var ownerUsernameLabelField: UILabel!
     @IBOutlet weak var repositoryNameLabelField: UILabel!
     @IBOutlet weak var peginateLabelField: UILabel!
-    weak var delegate : FoundRepositoriesCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         fixLabelFields()
-        moveSegue()
+        addGestureRecognizer()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    @IBAction func buttonClicked(_ sender: Any) {
-        delegate?.didTapButton()
     }
     
 }
@@ -38,10 +33,13 @@ extension FoundRepositoriesCell{
         repositoryNameLabelField.lineBreakMode = .byWordWrapping
         repositoryNameLabelField.numberOfLines = 0
     }
-    private func moveSegue(){
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToImage))
+    
+    func addGestureRecognizer(){
+        ownerImageView.isUserInteractionEnabled = true
+        ownerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped(_:))))
     }
-    @objc func tapToImage(){
-        print("kontrol")
+    
+    @objc func tapped(_ sender: UITapGestureRecognizer){
+        print("yalaaa")
     }
 }

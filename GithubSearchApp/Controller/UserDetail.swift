@@ -12,7 +12,6 @@ class UserDetail: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selected)
         
     }
 

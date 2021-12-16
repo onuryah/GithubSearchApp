@@ -46,7 +46,7 @@ class SearchRepositories: UIViewController {
                             self.repositoriesTableView.reloadData()
                         }
                 }catch{
-                   print("error")
+                    print(error.localizedDescription)
                 }
             }
         }.resume()
@@ -66,16 +66,18 @@ class SearchRepositories: UIViewController {
         cell.peginateLabelField.text = String(indexPath.row + 1)
         cell.repositoryNameLabelField.text = array[indexPath.row].name
         cell.ownerImageView.sd_setImage(with: URL(string: array[indexPath.row].owner.avatarURL))
-        cell.delegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = repositoriesTableView.dequeueReusableCell(withIdentifier: "foundRepositoriesCell", for: indexPath) as! FoundRepositoriesCell
+        
         Singleton.chosenItem = array[indexPath.row]
+        print("kontrol: \(Singleton.chosenItem)")
         performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
     }
 }
 
-extension SearchRepositories : FoundRepositoriesCellDelegate, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating{
+extension SearchRepositories: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating{
     fileprivate func registerCellToTableView(){
         let cellNib = UINib(nibName: "FoundRepositoriesCell", bundle: nil)
         repositoriesTableView.register(cellNib, forCellReuseIdentifier: "foundRepositoriesCell")
