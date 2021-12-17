@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" id="CyF-n2-bbK"/>
                     <connections>
                         <outlet property="repositoriesTableView" destination="lKA-Ov-CvZ" id="fff-2t-IeY"/>
-                        <segue destination="7UB-3n-Atm" kind="presentation" identifier="toUserDetailVC" modalPresentationStyle="fullScreen" id="abm-Ks-y6r"/>
+                        <segue destination="Xk9-jx-KxP" kind="presentation" identifier="toUserDetailVC" modalPresentationStyle="fullScreen" id="abm-Ks-y6r"/>
                         <segue destination="Vkg-Mz-H97" kind="presentation" identifier="toRepositoryDetailVC" modalPresentationStyle="fullScreen" id="AMw-uw-SRm"/>
                     </connections>
                 </viewController>
@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="83.705357142857139"/>
         </scene>
-        <!--User Detail-->
+        <!--User Details-->
         <scene sceneID="uGo-Az-Igu">
             <objects>
                 <viewController id="7UB-3n-Atm" customClass="UserDetail" customModule="GithubSearchApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,27 +49,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-u1-Sfe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="udx-ot-eqV">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="udx-ot-eqV" id="kly-F1-jIe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X7e-fo-sIx">
-                                        <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X7e-fo-sIx" id="8Ca-Qp-wzG">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-u1-Sfe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0lV-dj-aN5"/>
@@ -77,14 +58,22 @@
                         <constraints>
                             <constraint firstItem="SxJ-u1-Sfe" firstAttribute="leading" secondItem="0lV-dj-aN5" secondAttribute="leading" id="Fs0-50-eNc"/>
                             <constraint firstItem="0lV-dj-aN5" firstAttribute="bottom" secondItem="SxJ-u1-Sfe" secondAttribute="bottom" id="Tmm-U8-C11"/>
+                            <constraint firstItem="SxJ-u1-Sfe" firstAttribute="trailing" secondItem="0lV-dj-aN5" secondAttribute="trailing" id="V0f-ll-3Bu"/>
                             <constraint firstItem="SxJ-u1-Sfe" firstAttribute="top" secondItem="0lV-dj-aN5" secondAttribute="top" id="ZTk-DF-nA1"/>
+                            <constraint firstItem="SxJ-u1-Sfe" firstAttribute="bottom" secondItem="0lV-dj-aN5" secondAttribute="bottom" id="g8a-fA-Hqv"/>
                             <constraint firstItem="0lV-dj-aN5" firstAttribute="trailing" secondItem="SxJ-u1-Sfe" secondAttribute="trailing" id="iGp-77-nPR"/>
+                            <constraint firstItem="SxJ-u1-Sfe" firstAttribute="leading" secondItem="0lV-dj-aN5" secondAttribute="leading" id="iTW-YS-h9V"/>
+                            <constraint firstItem="SxJ-u1-Sfe" firstAttribute="top" secondItem="0lV-dj-aN5" secondAttribute="top" id="s20-xx-taf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="User Details" id="c8e-iU-heL"/>
+                    <connections>
+                        <outlet property="userTableView" destination="SxJ-u1-Sfe" id="brO-Jh-nsg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0c-fR-jB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271.0144927536235" y="-210.26785714285714"/>
+            <point key="canvasLocation" x="3296" y="-210"/>
         </scene>
         <!--Details-->
         <scene sceneID="iZm-A7-Bwc">
@@ -181,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSH-KQ-bhs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271.0144927536235" y="422.54464285714283"/>
+            <point key="canvasLocation" x="3296" y="423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WOW-Bn-1WW">
@@ -199,7 +188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ybb-vv-Tmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.8695652173915" y="422.54464285714283"/>
+            <point key="canvasLocation" x="2690" y="423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u7G-QY-q32">
@@ -218,6 +207,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFW-Nm-erv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UOq-RC-F4R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xk9-jx-KxP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cv7-aF-Hkv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7UB-3n-Atm" kind="relationship" relationship="rootViewController" id="ZwQ-AV-iQo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vyI-Ca-PN0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2690" y="-210"/>
         </scene>
     </scenes>
     <resources>

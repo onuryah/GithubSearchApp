@@ -32,13 +32,17 @@ class RepositoryDetail: UIViewController {
         if let imageUrl = selectedData?.owner.avatarURL{
             avatarImageView.sd_setImage(with: URL(string: imageUrl))
         }
-//        language.text = seleceted?.language as? String
+        
         if let selectedData = selectedData {
             repoNameLabel.text = "Repository Name: "+selectedData.name
             ownerNameLabel.text = "Owner Name: "+selectedData.owner.login
             forksCount.text = "Forks Count: "+String(selectedData.forksCount)
             watchersCountLabel.text = "Watchers Count:"+String(selectedData.watchersCount)
-            language.text = selectedData.language?.rawValue
+            if selectedData.language != nil{
+                language.text = "Language: "+selectedData.language!.rawValue
+            }else{
+                language.text = "Language: Not Found"
+            }
         }
         
     }

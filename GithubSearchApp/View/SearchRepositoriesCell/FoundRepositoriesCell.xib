@@ -53,15 +53,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4M-qU-ULo">
+                        <rect key="frame" x="0.0" y="0.0" width="217" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="140" id="HjB-ia-4xr"/>
+                            <constraint firstAttribute="width" constant="217" id="qoq-yP-ixJ"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="wGs-Mu-p1K" secondAttribute="bottom" id="6Eb-dt-Q4D"/>
                     <constraint firstItem="wGs-Mu-p1K" firstAttribute="leading" secondItem="nvl-ph-j6l" secondAttribute="trailing" constant="-217" id="90b-r9-OTy"/>
                     <constraint firstItem="3hF-3X-SGy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="A0A-w5-aab"/>
+                    <constraint firstItem="3hF-3X-SGy" firstAttribute="leading" secondItem="m4M-qU-ULo" secondAttribute="trailing" id="JVf-IN-5OD"/>
                     <constraint firstItem="3hF-3X-SGy" firstAttribute="leading" secondItem="nvl-ph-j6l" secondAttribute="trailing" id="Jo9-MA-xQ6"/>
                     <constraint firstItem="7mu-V8-2LA" firstAttribute="top" secondItem="nvl-ph-j6l" secondAttribute="bottom" constant="66" id="NGN-if-DFz"/>
+                    <constraint firstItem="m4M-qU-ULo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PLJ-Kt-KTp"/>
                     <constraint firstAttribute="trailing" secondItem="3hF-3X-SGy" secondAttribute="trailing" id="UwP-az-21z"/>
                     <constraint firstItem="nvl-ph-j6l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XGL-jT-AGJ"/>
+                    <constraint firstItem="7mu-V8-2LA" firstAttribute="top" secondItem="m4M-qU-ULo" secondAttribute="bottom" constant="66" id="YUc-8s-zeU"/>
                     <constraint firstItem="nvl-ph-j6l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cG6-ee-Ptb"/>
                     <constraint firstAttribute="trailing" secondItem="wGs-Mu-p1K" secondAttribute="trailing" id="cMw-0y-J3i"/>
                     <constraint firstItem="wGs-Mu-p1K" firstAttribute="top" secondItem="3hF-3X-SGy" secondAttribute="bottom" constant="80" id="dZ7-Dy-Xop"/>
@@ -70,6 +82,7 @@
                     <constraint firstItem="3hF-3X-SGy" firstAttribute="leading" secondItem="nvl-ph-j6l" secondAttribute="trailing" id="umU-He-BQc"/>
                     <constraint firstItem="7mu-V8-2LA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vYS-6m-dEy"/>
                     <constraint firstAttribute="bottom" secondItem="nvl-ph-j6l" secondAttribute="bottom" constant="106" id="yHE-Ow-uHx"/>
+                    <constraint firstItem="m4M-qU-ULo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zQN-aU-bbm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -78,6 +91,7 @@
                 <outlet property="ownerUsernameLabelField" destination="3hF-3X-SGy" id="zGX-Ct-fcg"/>
                 <outlet property="peginateLabelField" destination="7mu-V8-2LA" id="D0L-UE-Puk"/>
                 <outlet property="repositoryNameLabelField" destination="wGs-Mu-p1K" id="YcX-G4-81Z"/>
+                <outlet property="segueButton" destination="m4M-qU-ULo" id="AhG-nG-4zM"/>
             </connections>
             <point key="canvasLocation" x="215.94202898550725" y="134.59821428571428"/>
         </tableViewCell>

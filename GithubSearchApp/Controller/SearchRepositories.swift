@@ -45,9 +45,7 @@ class SearchRepositories: UIViewController {
                         DispatchQueue.main.async {
                             self.repositoriesTableView.reloadData()
                         }
-                }catch{
-                    print(error.localizedDescription)
-                }
+                }catch{}
             }
         }.resume()
         
@@ -66,15 +64,16 @@ class SearchRepositories: UIViewController {
         cell.peginateLabelField.text = String(indexPath.row + 1)
         cell.repositoryNameLabelField.text = array[indexPath.row].name
         cell.ownerImageView.sd_setImage(with: URL(string: array[indexPath.row].owner.avatarURL))
+        cell.segueButton.tag = indexPath.row
+        cell.segueButton.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = repositoriesTableView.dequeueReusableCell(withIdentifier: "foundRepositoriesCell", for: indexPath) as! FoundRepositoriesCell
-        
         Singleton.chosenItem = array[indexPath.row]
-        print("kontrol: \(Singleton.chosenItem)")
         performSegue(withIdentifier: "toRepositoryDetailVC", sender: nil)
     }
+    
+
 }
 
 extension SearchRepositories: UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating{
@@ -95,8 +94,19 @@ extension SearchRepositories: UITableViewDelegate, UITableViewDataSource, UISear
     }
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {return}
-        SearchRepositoriesUrl.repoName = text
-        getData()
+        if text != "" {
+            SearchRepositoriesUrl.repoName = text
+            getData()
+        }else{
+            getData()
+        }
+        
+    }
+    
+    @objc func tapped(sender: UIButton){
+        let indexpath = IndexPath(row: sender.tag, section: 0)
+        Singleton.chosenItem = array[indexpath.row]
+        performSegue(withIdentifier: "toUserDetailVC", sender: nil)
     }
 
     

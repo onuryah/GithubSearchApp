@@ -8,7 +8,11 @@
 import UIKit
 
 class RepositoriesOfUserCell: UITableViewCell {
-
+    @IBOutlet weak var repoName: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var watchersLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -25,6 +25,7 @@
 		4ADA90DE27555E670069885A /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90DC27555E670069885A /* UserInfoCell.xib */; };
 		4ADA90E327555EBF0069885A /* RepositoriesOfUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA90E127555EBF0069885A /* RepositoriesOfUserCell.swift */; };
 		4ADA90E427555EBF0069885A /* RepositoriesOfUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADA90E227555EBF0069885A /* RepositoriesOfUserCell.xib */; };
+		4AE4A744276D101F00783725 /* AllDataOfUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4A743276D101F00783725 /* AllDataOfUser.swift */; };
 		FC5871065DECC0D6A2D9B60F /* Pods_GithubSearchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C767DE6A26751281BC1362 /* Pods_GithubSearchApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		4ADA90DC27555E670069885A /* UserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
 		4ADA90E127555EBF0069885A /* RepositoriesOfUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesOfUserCell.swift; sourceTree = "<group>"; };
 		4ADA90E227555EBF0069885A /* RepositoriesOfUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesOfUserCell.xib; sourceTree = "<group>"; };
+		4AE4A743276D101F00783725 /* AllDataOfUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDataOfUser.swift; sourceTree = "<group>"; };
 		A09A95BEEA0F1ACB10ABCF3E /* Pods-GithubSearchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubSearchApp.release.xcconfig"; path = "Target Support Files/Pods-GithubSearchApp/Pods-GithubSearchApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,8 +175,9 @@
 		4ADA90CC27554F460069885A /* DataClass */ = {
 			isa = PBXGroup;
 			children = (
-				4A4D068927568BD100F1D6FF /* Datas.swift */,
 				4A647630276A20D000EE7FEB /* Singleton.swift */,
+				4A4D068927568BD100F1D6FF /* Datas.swift */,
+				4AE4A743276D101F00783725 /* AllDataOfUser.swift */,
 			);
 			path = DataClass;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				4ADA90D727555E2E0069885A /* FoundRepositoriesCell.swift in Sources */,
 				4ADA90B327554E550069885A /* AppDelegate.swift in Sources */,
 				4ADA90D0275552C10069885A /* UserDetail.swift in Sources */,
+				4AE4A744276D101F00783725 /* AllDataOfUser.swift in Sources */,
 				4ADA90B527554E550069885A /* SceneDelegate.swift in Sources */,
 				4A4D068227565D3F00F1D6FF /* SearchRepositoriesUrl.swift in Sources */,
 			);

@@ -8,7 +8,9 @@
 import UIKit
 
 class UserInfoCell: UITableViewCell {
-
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

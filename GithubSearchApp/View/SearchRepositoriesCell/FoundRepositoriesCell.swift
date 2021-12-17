@@ -13,6 +13,7 @@ class FoundRepositoriesCell: UITableViewCell {
     @IBOutlet weak var ownerUsernameLabelField: UILabel!
     @IBOutlet weak var repositoryNameLabelField: UILabel!
     @IBOutlet weak var peginateLabelField: UILabel!
+    @IBOutlet weak var segueButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,10 +37,5 @@ extension FoundRepositoriesCell{
     
     func addGestureRecognizer(){
         ownerImageView.isUserInteractionEnabled = true
-        ownerImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped(_:))))
-    }
-    
-    @objc func tapped(_ sender: UITapGestureRecognizer){
-        print("yalaaa")
     }
 }
