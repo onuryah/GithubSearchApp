@@ -15,6 +15,7 @@ class UserDetail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         backButtonAdded()
+        getData()
     }
     
     fileprivate func backButtonAdded() {
@@ -42,7 +43,7 @@ extension UserDetail: UITableViewDelegate, UITableViewDataSource{
     }
     
     func getData() {
-        guard let url = URL(string: SearchRepositoriesUrl.baseUrl+SearchRepositoriesUrl.repoName+SearchRepositoriesUrl.between+SearchRepositoriesUrl.pageNumber)  else {return}
+        guard let url = URL(string: "https://api.github.com/users/JakeWharton/repos")  else {return}
         print(url)
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
@@ -50,8 +51,10 @@ extension UserDetail: UITableViewDelegate, UITableViewDataSource{
                 guard let data = data else {return}
                 do{
                     
-                    let jsonData = try JSONDecoder().decode(RepositoriesArray.self, from: data)
-                    self.repositories = jsonData
+                    let jsonData = try JSONDecoder().decode([WelcomeElement].self, from: data)
+                    
+                    print("kontrol: \(jsonData)")
+                    
                     
 
                         DispatchQueue.main.async {

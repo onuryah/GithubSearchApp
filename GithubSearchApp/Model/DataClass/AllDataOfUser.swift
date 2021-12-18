@@ -23,6 +23,7 @@ struct RepositoriesArray {
     }
 }
 struct WelcomeElement: Codable {
+    let repoArr : [WelcomeElement]
    
     let name: String
     let welcomeDescription: String
@@ -31,6 +32,7 @@ struct WelcomeElement: Codable {
     let watchers: Int
 
     enum CodingKeys: String, CodingKey {
+        case repoArr
         case name
         case welcomeDescription = "description"
         case createdAt = "created_at"

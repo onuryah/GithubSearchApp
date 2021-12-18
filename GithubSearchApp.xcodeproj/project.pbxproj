@@ -149,8 +149,8 @@
 		4ADA90C927554EBF0069885A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4ADA90CF275552C10069885A /* UserDetail.swift */,
 				4ADA90CD275552B20069885A /* RepositoryDetail.swift */,
+				4ADA90CF275552C10069885A /* UserDetail.swift */,
 				4ADA90B627554E550069885A /* SearchRepositories.swift */,
 			);
 			path = Controller;
@@ -176,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				4A647630276A20D000EE7FEB /* Singleton.swift */,
-				4A4D068927568BD100F1D6FF /* Datas.swift */,
 				4AE4A743276D101F00783725 /* AllDataOfUser.swift */,
+				4A4D068927568BD100F1D6FF /* Datas.swift */,
 			);
 			path = DataClass;
 			sourceTree = "<group>";
