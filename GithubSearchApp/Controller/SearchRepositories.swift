@@ -27,7 +27,6 @@ class SearchRepositories: UIViewController {
 
     func getData() {
         guard let url = URL(string: SearchRepositoriesUrl.baseUrl+SearchRepositoriesUrl.repoName+SearchRepositoriesUrl.between+SearchRepositoriesUrl.pageNumber)  else {return}
-        print(url)
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 let alert = UIAlertController(title: "ERROR", message: "Error!", preferredStyle: UIAlertController.Style.alert)
@@ -50,7 +49,6 @@ class SearchRepositories: UIViewController {
         }.resume()
         
     }
-
     
 
     
@@ -106,6 +104,7 @@ extension SearchRepositories: UITableViewDelegate, UITableViewDataSource, UISear
     @objc func tapped(sender: UIButton){
         let indexpath = IndexPath(row: sender.tag, section: 0)
         Singleton.chosenItem = array[indexpath.row]
+        Singleton.chosenUser = array[indexpath.row].owner.login
         performSegue(withIdentifier: "toUserDetailVC", sender: nil)
     }
 

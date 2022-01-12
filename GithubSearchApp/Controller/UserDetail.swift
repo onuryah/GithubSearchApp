@@ -10,11 +10,12 @@ import UIKit
 class UserDetail: UIViewController {
     var selected: Item?
     @IBOutlet weak var userTableView: UITableView!
-    var repositories = [WelcomeElement]()
+    var userInfos = [WelcomeElement]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backButtonAdded()
+        registerCellToTableView()
         getData()
     }
     
@@ -26,7 +27,7 @@ class UserDetail: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return userInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,17 +44,17 @@ extension UserDetail: UITableViewDelegate, UITableViewDataSource{
     }
     
     func getData() {
-        guard let url = URL(string: "https://api.github.com/users/JakeWharton/repos")  else {return}
-        print(url)
-        URLSession.shared.dataTask(with: url) { data, response, error in
+            
+        
+        
+        guard let url = URL(string: "https://api.github.com/users/JakeWharton")  else {return}
+            URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
             }else if data != nil {
                 guard let data = data else {return}
                 do{
-                    
-                    let jsonData = try JSONDecoder().decode([WelcomeElement].self, from: data)
-                    
-                    print("kontrol: \(jsonData)")
+                    let jsonData: [WelcomeElement] = try JSONDecoder().decode([WelcomeElement].self, from: data)
+                    print("kontrol2: \(jsonData)")
                     
                     
 
@@ -64,6 +65,7 @@ extension UserDetail: UITableViewDelegate, UITableViewDataSource{
             }
         }.resume()
         
+    
     }
 
     

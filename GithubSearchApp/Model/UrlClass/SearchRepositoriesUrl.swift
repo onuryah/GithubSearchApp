@@ -13,4 +13,6 @@ class SearchRepositoriesUrl{
     static let between = "&per_page=100&page="
     static let pageNumber = "1"
     static var url = baseUrl+repoName+between+pageNumber
+    static let userBaseUrl = "https://api.github.com/users/"
+    static var userEnd = "/repos"
 }

@@ -9,4 +9,5 @@ import Foundation
 
 struct Singleton{
     static var chosenItem : Item?
+    static var chosenUser : String?
 }
